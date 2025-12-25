@@ -96,6 +96,9 @@ on your local machine.
 For installation methods on operating systems other than Windows, as well as various ways to run Typst, please refer to the official documentation:
 https://typst.app/docs/
 
+In developing this package, we referred to an excellent paper by a pioneering contributor who has already applied Typst to document and report generation in the pharmaceutical domain.  
+https://www.lexjansen.com/pharmasug-cn/2024/AP/Pharmasug-China-2024-AP10043_Final_Paper.pdf.
+
 ---
 
 ## `%typst_start()` macro <a name="typststart-macro-3"></a> ######
