@@ -3,6 +3,7 @@ sas2typst_report is a SAS macro package that enables direct generation of Typst 
 
 <img width="317" height="303" alt="image" src="https://github.com/user-attachments/assets/bb5e718a-d596-4dc3-bfb9-52616091a822" />
 
+## Usage Example 
 ~~~sas
 data ADSL;
 length SUBJID SITEID REGION $200. AGE 8. SEX RACE ETHNIC $200. ; 
@@ -95,6 +96,7 @@ on your local machine.
 For installation methods on operating systems other than Windows, as well as various ways to run Typst, please refer to the official documentation:
 https://typst.app/docs/
 
+---
 
 ## `%typst_start()` macro <a name="typststart-macro-3"></a> ######
 
