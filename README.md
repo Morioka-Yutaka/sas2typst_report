@@ -80,7 +80,7 @@ https://typst.app/play/
 
 Alternatively, after installing Typst via the Command Prompt or PowerShell using
 ~~~text
-typst compile sample.typListing_1_1.typ
+winget install --id Typst.Typst
 ~~~
 
 you can generate a PDF file by running
