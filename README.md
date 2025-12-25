@@ -86,14 +86,30 @@ you can generate a PDF file by running
 ~~~text
 typst compile Listing_1_1.typ
 ~~~
-<img width="366" height="108" alt="image" src="https://github.com/user-attachments/assets/e812d125-8d56-46d3-9145-11fbf6bd6225" />
+<img width="178" height="54" alt="image" src="https://github.com/user-attachments/assets/e812d125-8d56-46d3-9145-11fbf6bd6225" />
 
-<img width="1366" height="512" alt="image" src="https://github.com/user-attachments/assets/c0b71ebd-2e87-489e-a7f6-010b88272cda" />
-
-
-
-
+<img width="783" height="256" alt="image" src="https://github.com/user-attachments/assets/c0b71ebd-2e87-489e-a7f6-010b88272cda" />  
+  
 on your local machine.
 
 For installation methods on operating systems other than Windows, as well as various ways to run Typst, please refer to the official documentation:
 https://typst.app/docs/
+
+
+## `%typst_start()` macro <a name="typststart-macro-3"></a> ######
+
+Macro:     typst_start  
+ Purpose:   Initialize Typst source file generation using PROC STREAM and prepare the output environment.  
+ Parameters:  
+   outdir   = Output directory (currently not used)  
+   outfile  = Name of the Typst output file (default: sample.typ)  
+ Global Macro Variables:  
+   nw       = Line break token for Typst output.
+ Note: In general, native Typst code can be written directly as-is. However, due to Typst syntax requirements, explicit line breaks must be inserted using &nw at positions where a line break is required.  
+ Usage:  
+   %typst_start(outfile=my_listing.typ);  
+     <Typst source code>  
+   %typst_end();
+
+  
+---
