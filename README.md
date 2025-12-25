@@ -3,3 +3,67 @@ sas2typst_report is a SAS macro package that enables direct generation of Typst 
 
 <img width="317" height="303" alt="image" src="https://github.com/user-attachments/assets/bb5e718a-d596-4dc3-bfb9-52616091a822" />
 
+~~~sas
+data ADSL;
+length SUBJID SITEID REGION $200. AGE 8. SEX RACE ETHNIC $200. ; 
+SUBJID="101-301"; SITEID="101"; REGION="North America"; AGE=57;SEX= "F";RACE= "White";ETHNIC="Not Hispanic or Latino"; WEIGHTBL=58.1; HEIGHTBL=160.8;output;
+SUBJID="102-303"; SITEID="102"; REGION="North America"; AGE=61;SEX= "M";RACE= "White";ETHNIC="Not Reported"; WEIGHTBL=104.9; HEIGHTBL=188.0;output;
+SUBJID="111-303"; SITEID="111"; REGION="North America"; AGE=43;SEX= "M";RACE= "White";ETHNIC="Not Hispanic or Latino"; WEIGHTBL=85.5; HEIGHTBL=182.5;output;
+run;
+
+%typst_start(outdir = D:\Users\10089669\Desktop\clibor, outfile=Listing_1_1.typ)
+#set page(
+  header: [#grid(columns: (1fr, 1fr), align: top,
+    [#align(left)[Protocol: ABC-123]],
+    [#align(right)[Page #context counter(page).display()]],
+  )],
+)
+&nw;
+
+= Listing 1. Demographics and Baseline Characteristics
+&nw;
+
+#text(size: 10pt)[Safety Analysis Population]
+&nw;
+
+#table(
+  columns: (
+    18mm,
+    10mm,
+    28mm,
+    15mm,
+    10mm,
+    18mm,
+    52mm,
+    26mm,
+    26mm 
+  ),
+  stroke: none,
+
+  table.header(
+    table.hline(stroke: 1pt + black),
+    "Subject",
+     "Site",
+     "Region",
+     "Age (years)",
+     "Sex",
+    "Race",
+    "Ethnic",
+     "Baseline Weight~(kg)", 
+     "Baseline Height~(cm)",
+    table.hline(stroke: 1pt + black),
+  ),
+
+%typ_dataset_csv(ds=ADSL,wh=%nrbquote(SEX="M"),varlist=SUBJID SITEID REGION AGE SEX RACE ETHNIC WEIGHTBL HEIGHTBL)
+
+  table.footer(
+    table.hline(stroke: 1pt + black),
+  ),
+)
+#v(-15pt)
+#text(size: 8pt)[
+Age is calculated at baseline.
+#par()[Baseline weight/height are measured at Visit 1 (Day 1).]
+]
+%typst_end();
+~~~
