@@ -120,3 +120,39 @@ https://typst.app/docs/
 ~~~
   
 ---
+
+## `%typst_end()` macro <a name="typstend-macro-2"></a> ######
+### Purpose:   
+Finalize Typst source file generation and properly close PROC STREAM output.  
+### Details:  
+   Terminates PROC STREAM using explicit delimiter (;;;;)  
+   Clears the associated FILENAME reference  
+   Must be used in conjunction with typst_start  
+ ### Usage:  
+ ~~~sas
+   %typst_start(outfile=my_listing.typ);  
+     <Typst source code>  
+   %typst_end();
+~~~
+---
+
+## `%typ_dataset_csv()` macro <a name="typdatasetcsv-macro-1"></a> ######
+### Purpose:   Extract rows from a SAS dataset based on a WHERE condition and output the values in a CSV-like format that can be directly embedded into a Typst table().  
+### Parameters:  
+~~~text
+   ds       = Input SAS dataset name  
+   wh       = WHERE condition to filter observations (use %nrbquote if needed)  
+   varlist  = List of variables to output (space-delimited)
+~~~
+### Details:  
+   Outputs comma-separated values suitable for Typst tables  
+### Data Handling:  
+   All values are quoted  
+   Double quotation marks (") inside character variables are replaced with Unicode right double quotation mark (U+201D)  
+   A warning is issued if such replacement occurs  
+### Useage:  
+~~~sas
+ %typ_dataset_csv(ds=sashelp.class,wh=%nrbquote(AGE<=15),varlist=NAME AGE SEX WEIGHT)
+~~~
+  
+---
