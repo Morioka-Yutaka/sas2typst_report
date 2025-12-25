@@ -97,7 +97,7 @@ For installation methods on operating systems other than Windows, as well as var
 https://typst.app/docs/
 
 In developing this package, we referred to an excellent paper by a pioneering contributor who has already applied Typst to document and report generation in the pharmaceutical domain. 
--- Tao Zhang, Phasta, Superiority in Nature: Typst in Production of TLFs
+-- Tao Zhang (Phasta), "Superiority in Nature: Typst in Production of TLFs"
 https://www.lexjansen.com/pharmasug-cn/2024/AP/Pharmasug-China-2024-AP10043_Final_Paper.pdf.
 
 ---
