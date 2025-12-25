@@ -100,18 +100,23 @@ https://typst.app/docs/
 
 ## `%typst_start()` macro <a name="typststart-macro-3"></a> ######
 
-Macro:     typst_start  
- Purpose:   Initialize Typst source file generation using PROC STREAM and prepare the output environment.  
- Parameters:  
+ ### Purpose:   Initialize Typst source file generation using PROC STREAM and prepare the output environment.  
+ ### Parameters:  
+ ~~~text
    outdir   = Output directory (currently not used)  
-   outfile  = Name of the Typst output file (default: sample.typ)  
- Global Macro Variables:  
+   outfile  = Name of the Typst output file (default: sample.typ)
+ ~~~
+ ### Global Macro Variables:  
+ ~~~
    nw       = Line break token for Typst output.
- Note: In general, native Typst code can be written directly as-is. However, due to Typst syntax requirements, explicit line breaks must be inserted using &nw at positions where a line break is required.  
- Usage:  
+ ~~~
+ ### Note: 
+ In general, native Typst code can be written directly as-is. However, due to Typst syntax requirements, explicit line breaks must be inserted using &nw at positions where a line break is required.  
+ ### Usage:  
+ ~~~sas
    %typst_start(outfile=my_listing.typ);  
      <Typst source code>  
    %typst_end();
-
+~~~
   
 ---
