@@ -15,7 +15,7 @@ run;
 
 ~~~sas
 %typst_start(outdir = D:\Users\10089669\Desktop\clibor, outfile=Listing_1_1.typ)
-#set page(
+#set page(paper: "a4", flipped: true,
   header: [#grid(columns: (1fr, 1fr), align: top,
     [#align(left)[Protocol: ABC-123]],
     [#align(right)[Page #context counter(page).display()]],
@@ -71,4 +71,29 @@ Age is calculated at baseline.
 %typst_end();
 ~~~
 Listing_1_1.typ
-<img width="1709" height="221" alt="image" src="https://github.com/user-attachments/assets/b20248a6-1473-44fe-bffd-0007970cad05" />
+<img width="1693" height="256" alt="image" src="https://github.com/user-attachments/assets/164119df-58cf-4acf-b742-0f19565996ed" />
+
+The generated .typ file can be previewed using the web-based viewer, from which you can also download the output as a PDF.  
+https://typst.app/play/
+<img width="1879" height="499" alt="image" src="https://github.com/user-attachments/assets/7adcf1be-ffbc-48aa-87a7-dcc7a4bc4a22" />
+
+Alternatively, after installing Typst via the Command Prompt or PowerShell using
+~~~text
+typst compile sample.typListing_1_1.typ
+~~~
+
+you can generate a PDF file by running
+~~~text
+typst compile Listing_1_1.typ
+~~~
+<img width="366" height="108" alt="image" src="https://github.com/user-attachments/assets/e812d125-8d56-46d3-9145-11fbf6bd6225" />
+
+<img width="1366" height="512" alt="image" src="https://github.com/user-attachments/assets/c0b71ebd-2e87-489e-a7f6-010b88272cda" />
+
+
+
+
+on your local machine.
+
+For installation methods on operating systems other than Windows, as well as various ways to run Typst, please refer to the official documentation:
+https://typst.app/docs/
