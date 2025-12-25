@@ -15,7 +15,7 @@ run;
 <img width="724" height="78" alt="image" src="https://github.com/user-attachments/assets/0c7e9441-058d-4329-a65d-ce5ac09752ad" />
 
 ~~~sas
-%typst_start(outdir = D:\Users\10089669\Desktop\clibor, outfile=Listing_1_1.typ)
+%typst_start(outdir = ., outfile=Listing_1_1.typ)
 #set page(paper: "a4", flipped: true,
   header: [#grid(columns: (1fr, 1fr), align: top,
     [#align(left)[Protocol: ABC-123]],
